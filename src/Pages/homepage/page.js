@@ -3,6 +3,8 @@ import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import somnang from "@/../public/assets/nang.PNG"
 import { FaFacebookF, FaLinkedinIn, FaEnvelope, FaPaperPlane } from "react-icons/fa";
+import { useEffect } from 'react';
+import AOS from 'aos';
 const socialIcons = [
     { id: 1, icon: <FaFacebookF />, link: "https://facebook.com/yourprofile" },
     { id: 2, icon: <FaLinkedinIn />, link: "https://linkedin.com/in/yourprofile" },
@@ -10,7 +12,15 @@ const socialIcons = [
     { id: 4, icon: <FaPaperPlane />, link: "https://t.me/yourtelegram" },
 ];
 
+
+
 export default function HomePage() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // animation duration in ms
+            once: true,     // whether animation should happen only once
+        });
+    }, []);
     return (
         <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-10 bg-white w-full">
             {/* Left Side */}
@@ -18,7 +28,7 @@ export default function HomePage() {
                 <div className="flex flex-col gap-4">
                     <h1 className="text-2xl font-bold text-black">Hello It’s Me</h1>
                     <h2 className="text-5xl font-extrabold">
-                        <span className="block text-black">SEM SAMNANG</span>
+                        <span className="block text-black" data-aos="flip-left">SEM SAMNANG</span>
                     </h2>
                     <h3 className="text-2xl font-semibold flex gap-3 text-black">
                         And I’m a

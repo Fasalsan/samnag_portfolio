@@ -1,7 +1,7 @@
 export default function Contact() {
     return (
         <div className="w-full h-screen  p-6 sm:p-8 bg-gray-200 rounded-lg shadow-md mt-20">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-black">
                 Contact <span className="text-red-500">Me!</span>
             </h2>
 

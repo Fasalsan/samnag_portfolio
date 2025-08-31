@@ -1,5 +1,5 @@
 // app/layout.js
-
+import 'aos/dist/aos.css';
 import './globals.css'
 
 export const metadata = {

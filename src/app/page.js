@@ -4,6 +4,7 @@ import HomePage from '@/Pages/homepage/page'
 import About from '../Pages/about/page'
 import Skills from '@/Pages/skill/page'
 import Project from '@/Pages/project/page'
+import 'aos/dist/aos.css';
 
 const Section = ({ id, title, children }) => (
 

@@ -1,7 +1,16 @@
-
+"use client";
 import { PenTool, Layout, Grid } from "lucide-react"; // lucide-react icons
+import { useEffect } from 'react';
+import AOS from 'aos';
 
 export default function Skills() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration in ms
+      once: true,     // whether animation should happen only once
+    });
+  }, []);
 
   const skills = [
     {
@@ -30,11 +39,15 @@ export default function Skills() {
         </h2>
 
         {/* Cards */}
+
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <div
               key={index}
               className="bg-gray-200 border-2 border-red-400 rounded-2xl p-6 text-center flex flex-col items-center shadow hover:shadow-lg transition"
+              data-aos="flip-right"
+              data-aos-delay={index * 200} // stagger animation for each card
             >
               {skill.icon}
               <h3 className="text-lg font-semibold mt-4 mb-3">
@@ -43,8 +56,7 @@ export default function Skills() {
               <p className="text-gray-800 text-sm leading-relaxed mb-6">
                 {skill.desc}
               </p>
-              <button
-                className="bg-red-500 text-white font-semibold px-8 py-3 rounded-xl shadow hover:bg-red-600 transition">
+              <button className="bg-red-500 text-white font-semibold px-8 py-3 rounded-xl shadow hover:bg-red-600 transition">
                 Click
               </button>
             </div>

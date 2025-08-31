@@ -6,7 +6,7 @@ export default function AboutMe() {
     <section className="bg-gray-200 py-12">
       <div className="w-full mx-auto px-6">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl font-bold text-center mb-12 text-black">
           About <span className="text-red-500">Me</span>
         </h2>
 

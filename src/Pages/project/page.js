@@ -6,6 +6,8 @@ import phone3 from "@/../public/assets/phone3.jpg";
 import poster from "@/../public/assets/poster.jpg";
 import poster3 from "@/../public/assets/poster3.jpg";
 import poster2 from "@/../public/assets/poster2.jpg";
+import { useEffect } from 'react';
+import AOS from 'aos';
 
 const cardData = [
   {
@@ -53,6 +55,12 @@ const cardData = [
 ];
 
 export default function Project() {
+    useEffect(() => {
+    AOS.init({
+      duration: 1000, // scroll animation duration
+      once: true,     // animate only once
+    });
+  }, []);
 
   const handleClick = (title) => {
     alert(`You are Clicking on ${title} Project`);
@@ -60,52 +68,49 @@ export default function Project() {
   return (
     <div className="w-full h-fit">
       {/* Title */}
-      <h2 className="text-4xl font-bold text-center mb-12">
+      <h2 className="text-4xl font-bold text-center mb-12 text-black">
         My <span className="text-red-500">Project</span>
       </h2>
 
-      <div className="w-full bg-gray-200 flex items-center justify-center px-6">
-        <div className="w-full h-fit py-20 max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {cardData.map((card, idx) => (
-            <div
-              key={idx}
-              className="relative group w-full h-[450px] border-4 border-red-300 rounded-2xl overflow-hidden shadow-lg"
-            >
-              {/* Background Image */}
-              <Image
-                src={card.img}
-                alt="App Mockup"
-                className="object-cover"
-                fill
-              />
+ <div className="w-full bg-gray-200 flex items-center justify-center px-6">
+      <div className="w-full h-fit py-20 max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {cardData.map((card, idx) => (
+          <div
+            key={idx}
+            className="relative group w-full h-[450px] border-4 border-red-300 rounded-2xl overflow-hidden shadow-lg"
+            data-aos="zoom-in"
+            data-aos-delay={idx * 200} // stagger scroll animation
+          >
+            {/* Background Image */}
+            <Image
+              src={card.img}
+              alt={card.title}
+              className="object-cover"
+              fill
+            />
 
-              {/* Slide-Up Overlay */}
-              <div className="absolute inset-0 flex items-end">
-                <div
-                  className="w-full h-[80%] bg-gradient-to-b from-orange-500 to-transparent text-black text-center p-6 rounded-t-3xl
-                    transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
+            {/* Slide-Up Overlay */}
+            <div className="absolute inset-0 flex items-end">
+              <div
+                className="w-full h-[80%] bg-gradient-to-b from-orange-500 to-transparent text-black text-center p-6 rounded-t-3xl
+                  transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
+              >
+                <h2 className="text-xl font-bold mb-4">{card.title}</h2>
+                <p className="text-lg leading-tight mb-4">{card.description}</p>
+
+                {/* Link Button */}
+                <button
+                  onClick={() => handleClick(card.title)}
+                  className="inline-block bg-red-500 text-white px-4 py-2 rounded-full shadow hover:bg-red-600 transition cursor-pointer"
                 >
-                  <h2 className="text-xl font-bold mb-4">{card.title}</h2>
-                  <p className="text-lg leading-tight mb-4">
-                    {card.description}
-                  </p>
-
-                  {/* Link Button */}
-                  <button
-                    // href={card.link}\
-                    onClick={() => handleClick(card.title)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-red-500 text-white px-4 py-2 rounded-full shadow hover:bg-red-600 transition cursor-pointer"
-                  >
-                    View Project
-                  </button>
-                </div>
+                  View Project
+                </button>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
     </div>
   );
 }
