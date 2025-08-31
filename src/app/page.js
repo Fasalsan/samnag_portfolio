@@ -23,23 +23,23 @@ export default function Home() {
     <>
       <Navbar />
       <main className="pt-20">
-        <Section id="home" title="Home">
+        <Section id="Home" title="Home">
           <HomePage />
         </Section>
 
-        <Section id="about" title="About">
+        <Section id="About" title="About">
           <About />
         </Section>
 
-        <Section id="skill" title="Skill" >
+        <Section id="Skill" title="Skill" >
           <Skills  />
         </Section>
 
-        <Section id="project" title="project">
+        <Section id="Project" title="project">
           <Project />
         </Section>
 
-        <Section id="contact" title="Contact">
+        <Section id="Contact" title="Contact">
           <Contact />
         </Section>
       </main>

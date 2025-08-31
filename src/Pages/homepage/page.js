@@ -16,11 +16,11 @@ export default function HomePage() {
             {/* Left Side */}
             <div className="md:w-1/2 space-y-6">
                 <div className="flex flex-col gap-4">
-                    <h1 className="text-2xl font-bold">Hello It’s Me</h1>
+                    <h1 className="text-2xl font-bold text-black">Hello It’s Me</h1>
                     <h2 className="text-5xl font-extrabold">
-                        <span className="block">SEM SAMNANG</span>
+                        <span className="block text-black">SEM SAMNANG</span>
                     </h2>
-                    <h3 className="text-2xl font-semibold flex gap-3">
+                    <h3 className="text-2xl font-semibold flex gap-3 text-black">
                         And I’m a
                         <span >
                             <ReactTyped

@@ -25,7 +25,7 @@ export default function Skills() {
     <section className="bg-white py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl font-bold text-center mb-12 text-black">
           My <span className="text-red-500">Skills</span>
         </h2>
 

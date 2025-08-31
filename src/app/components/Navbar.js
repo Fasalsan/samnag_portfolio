@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
 
-const sections = ['home', 'about', 'skill', 'contact']
+const sections = ['Home', 'About', 'Skill', 'Project', 'Contact']
 
 export default function Navbar() {
-  const [active, setActive] = useState('home')
+  const [active, setActive] = useState('Home')
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Navbar() {
     <nav className="fixed top-0 flex justify-between items-center px-6 sm:px-20 py-5 w-full bg-white z-50 shadow-md">
       {/* Logo */}
       <div>
-        <h1 className="font-bold text-3xl sm:text-4xl">Portfolio.</h1>
+        <h1 className="font-bold text-3xl sm:text-4xl text-black">Portfolio.</h1>
       </div>
 
       {/* Desktop Menu */}
