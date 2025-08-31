@@ -1,7 +1,8 @@
-// app/components/Skills.tsx
+
 import { PenTool, Layout, Grid } from "lucide-react"; // lucide-react icons
 
 export default function Skills() {
+
   const skills = [
     {
       icon: <PenTool size={40} className="text-red-500 mx-auto rotate-270" />,
@@ -42,7 +43,8 @@ export default function Skills() {
               <p className="text-gray-800 text-sm leading-relaxed mb-6">
                 {skill.desc}
               </p>
-              <button className="bg-red-500 text-white font-semibold px-8 py-3 rounded-xl shadow hover:bg-red-600 transition">
+              <button
+                className="bg-red-500 text-white font-semibold px-8 py-3 rounded-xl shadow hover:bg-red-600 transition">
                 Click
               </button>
             </div>

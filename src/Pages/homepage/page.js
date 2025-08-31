@@ -4,10 +4,10 @@ import Image from "next/image";
 import somnang from "@/../public/assets/nang.PNG"
 import { FaFacebookF, FaLinkedinIn, FaEnvelope, FaPaperPlane } from "react-icons/fa";
 const socialIcons = [
-    { id: 1, icon: <FaFacebookF /> },
-    { id: 2, icon: <FaLinkedinIn /> },
-    { id: 3, icon: <FaEnvelope /> },
-    { id: 4, icon: <FaPaperPlane /> },
+    { id: 1, icon: <FaFacebookF />, link: "https://facebook.com/yourprofile" },
+    { id: 2, icon: <FaLinkedinIn />, link: "https://linkedin.com/in/yourprofile" },
+    { id: 3, icon: <FaEnvelope />, link: "mailto:youremail@example.com" },
+    { id: 4, icon: <FaPaperPlane />, link: "https://t.me/yourtelegram" },
 ];
 
 export default function HomePage() {
@@ -45,14 +45,17 @@ export default function HomePage() {
                 <div className="flex flex-col pt-6 gap-9">
                     <div className="flex gap-5 text-red-500 text-2xl">
                         {socialIcons.map((item) => (
-                            <div
+                            <a
                                 key={item.id}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="block p-2 cursor-pointer border-2 border-transparent rounded-full
-                 transition-all duration-300 transform 
-               hover:border-red-500 hover:text-red-600"
+                       transition-all duration-300 transform 
+                       hover:border-red-500 hover:text-red-600"
                             >
                                 {item.icon}
-                            </div>
+                            </a>
                         ))}
                     </div>
 
@@ -68,19 +71,15 @@ export default function HomePage() {
             </div>
 
             {/* Right Side */}
-            <div className="relative mt-10 md:mt-0 p-12">
-                <div className="relative w-[430px] h-[430px] rounded-full bg-neonBlue shadow-[0_0_60px_30px_rgba(252,79,70,0.6)] overflow-hidden flex items-center justify-center bg-[#FC4F46]">
-                    {/* <img
-                        src="https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-PNG-Photos.png"
-                        alt="Monochrome Portrait"
-                        className="object-cover grayscale w-[265px] h-[398px]"
-                    /> */}
+            <div className=" mt-14 ">
+                <div className="relative w-[350px] h-[350px] rounded-full bg-neonBlue shadow-[0_0_60px_30px_rgba(252,79,70,0.6)] overflow-hidden flex items-center justify-center bg-[#FC4F46]">
+
                     <Image
                         src={somnang}
                         alt="Unsplash Example"
-                        width={300}
-                        height={150}
-                        className="rounded-lg object-cover"
+                        width={250}
+                        height={120}
+                        className="rounded-lg object-cover "
                     />
                 </div>
             </div>

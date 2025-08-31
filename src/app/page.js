@@ -6,6 +6,8 @@ import Skills from '@/Pages/skill/page'
 import Project from '@/Pages/project/page'
 
 const Section = ({ id, title, children }) => (
+
+
   <section
     id={id}
     className=" flex flex-col items-center justify-center bg-gray-50 "
@@ -16,6 +18,7 @@ const Section = ({ id, title, children }) => (
 )
 
 export default function Home() {
+
   return (
     <>
       <Navbar />
@@ -28,8 +31,8 @@ export default function Home() {
           <About />
         </Section>
 
-        <Section id="skill" title="Skill">
-          <Skills />
+        <Section id="skill" title="Skill" >
+          <Skills  />
         </Section>
 
         <Section id="project" title="project">

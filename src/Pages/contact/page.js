@@ -1,13 +1,13 @@
 export default function Contact() {
     return (
-        <div className="w-full mx-auto p-8 bg-gray-200 rounded-lg shadow-md mt-20">
-                  <h2 className="text-4xl font-bold text-center mb-12">
-          Contact <span className="text-red-500">Me!</span>
-        </h2>
+        <div className="w-full h-screen  p-6 sm:p-8 bg-gray-200 rounded-lg shadow-md mt-20">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+                Contact <span className="text-red-500">Me!</span>
+            </h2>
 
-            <form className="space-y-6 px-20">
+            <form className="space-y-6 sm:px-20">
                 {/* Row 1: First Name, Last Name */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input
                         type="text"
                         placeholder="First name"
@@ -21,7 +21,7 @@ export default function Contact() {
                 </div>
 
                 {/* Row 2: Phone Number, Email */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input
                         type="tel"
                         placeholder="Phone number"
